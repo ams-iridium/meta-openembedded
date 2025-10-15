@@ -11,8 +11,10 @@ PYPI_PACKAGE = "behave"
 
 do_configure:prepend() {
     # Remove the duplicate "license" definition from pyproject.toml
-    sed -i '/license /d' pyproject.toml
+    sed -i '/license =/d' pyproject.toml
     sed -i '/license-files =/d' pyproject.toml
+    sed -i '/license =/d' setup.cfg
+    sed -i '/license-files =/d' setup.cfg
 }
 
 RDEPENDS:${PN} += " \
