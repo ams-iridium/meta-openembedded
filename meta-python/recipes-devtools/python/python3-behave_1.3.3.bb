@@ -7,6 +7,10 @@ SRC_URI[sha256sum] = "2b8f4b64ed2ea756a5a2a73e23defc1c4631e9e724c499e46661778453
 
 inherit pypi python_setuptools_build_meta
 
+DEPENDS += "\
+    python3-setuptools-scm-native \
+"
+
 PYPI_PACKAGE = "behave"
 
 do_configure:prepend() {
@@ -23,6 +27,4 @@ RDEPENDS:${PN} += " \
     python3-six \
     python3-cucumber-tag-expressions \
     "
-DEPENDS += "\
-    python3-setuptools-scm-native \
-"
+
